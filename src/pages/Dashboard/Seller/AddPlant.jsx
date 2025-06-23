@@ -39,8 +39,13 @@ const AddPlant = () => {
       quantity,
       image: imgUrl,
     };
+    // 4.4 send the data to server from the client side
+    const { datas } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/add-plant`,
+      plantData
+    );
 
-    console.table(plantData);
+    console.log(plantData);
   };
   return (
     <div>
